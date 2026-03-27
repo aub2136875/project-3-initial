@@ -1,0 +1,7 @@
+- AI analysis improved my code quality by helping to explain a lot of things and after testing I went over what worked and what didn't work as well as compile errors. For bigger things like working on the methods I used Claude since it seemed better at helping to fix problems.
+- I used chatGPT for more general questions and ideas I needed clarification about rather than the assignment itself so I didn't include a lot of my basic questions in the interaction log.
+- One issue I had was that some of the recommended changes would not compile in lines like "} catch (InvalidDataException e) {" At first I tried to do the intellij suggesion which deleted that catch and let the code compile, but there were still some issues with the tests
+- I ended up asking Claude about how I could implement those methods when they wouldn't compile with the "InvalidDataException e" catch
+- There was also a misplaced bracket which Claude picked up when reviewing the code which helped me with a compiling issue
+- There was an issue where I had accidentally duplicated a method which Claude also caught when I didn't notice at first.
+- Once the methods didn't have errors and I was going through tests I had the AI evaluate the entire class since I was running low on the amount of chats I could have and I wanted to check everything.

@@ -63,6 +63,8 @@ public class GentlyDownTheStream {
                     .collect(Collectors.toList());
         } catch (IllegalArgumentException e) {
             throw e;
+        } catch (EmptyCollectionException e) {
+            throw e;
         } catch (Exception e) {
             throw new InvalidDataException("Failed to retrieve first two fruits: " + e.getMessage());
         }
@@ -99,6 +101,8 @@ public class GentlyDownTheStream {
                     .collect(Collectors.toList());
         } catch (IllegalArgumentException e) {
             throw e;
+        } catch (EmptyCollectionException e) {
+            throw e;
         } catch (Exception e) {
             throw new InvalidDataException("Failed to reverse sort veggies: " + e.getMessage());
         }
@@ -116,6 +120,8 @@ public class GentlyDownTheStream {
                     .collect(Collectors.toList());
         } catch (IllegalArgumentException e) {
             throw e;
+        } catch (EmptyCollectionException e) {
+            throw e;
         } catch (Exception e) {
             throw new InvalidDataException("Failed to reverse sort veggies in upper case: " + e.getMessage());
         }
@@ -132,6 +138,8 @@ public class GentlyDownTheStream {
                     .limit(10)
                     .collect(Collectors.toList());
         } catch (IllegalArgumentException e) {
+            throw e;
+        } catch (EmptyCollectionException e) {
             throw e;
         } catch (Exception e) {
             throw new InvalidDataException("Failed to retrieve top ten: " + e.getMessage());
@@ -151,6 +159,8 @@ public class GentlyDownTheStream {
                     .collect(Collectors.toList());
         } catch (IllegalArgumentException e) {
             throw e;
+        } catch (EmptyCollectionException e) {
+            throw e;
         } catch (Exception e) {
             throw new InvalidDataException("Failed to retrieve top ten unique: " + e.getMessage());
         }
@@ -169,6 +179,8 @@ public class GentlyDownTheStream {
                     .limit(10)
                     .collect(Collectors.toList());
         } catch (IllegalArgumentException e) {
+            throw e;
+        } catch (EmptyCollectionException e) {
             throw e;
         } catch (Exception e) {
             throw new InvalidDataException("Failed to retrieve top ten unique odd: " + e.getMessage());
@@ -206,12 +218,15 @@ public class GentlyDownTheStream {
                                          Comparator<T> comparator) throws InvalidDataException {
         try {
             validateCollection(collection, "Input collection");
-
             return collection.stream()
                     .filter(Objects::nonNull)
                     .filter(filter)
                     .sorted(comparator)
                     .collect(Collectors.toList());
+        } catch (IllegalArgumentException e) {
+            throw e;
+        } catch (EmptyCollectionException e) {
+            throw e;
         } catch (Exception e) {
             throw new InvalidDataException("Failed to sort and filter collection: " + e.getMessage());
         }
